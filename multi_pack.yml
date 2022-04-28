@@ -1,0 +1,12 @@
+--- 
+- hosts: all
+  tasks:
+    - name:
+      apt:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+          - git
+          - wget
+          - vim
+      become: yes

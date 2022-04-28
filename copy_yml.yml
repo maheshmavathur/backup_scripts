@@ -1,0 +1,14 @@
+--- 
+- hosts: all
+  tasks:
+    - name: copy_files
+      copy:
+        src: /home/ubuntu/ls_file
+        dest: /home/ubuntu/fol/
+    - name: file_permission    
+      file:
+        path: /home/ubuntu/fol/ls_file
+        mode: 0777
+        owner: root
+        group: root
+      become: yes
